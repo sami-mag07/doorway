@@ -2,6 +2,25 @@
 
 Decided on Sep 23, 16:00. This file replaces the web-only pipeline and is the source of truth for recording, processing and live guidance. The README still covers the idea, the web part (business onboarding + map) and the timeline.
 
+## 0. Demo-first scope (Sep 23, evening, overrides the rest)
+The backend doesn't need to be real. What counts is what the demo and the video show. So:
+
+| Part | Real | Faked |
+|---|---|---|
+| Recording (ARKit path, marks, world map) | yes, on the phone | |
+| Waypoints | built **on the phone** from marks + path turns | |
+| Instructions | templates on the phone ("Turn left at the <mark>") | Gemini labeling = stretch |
+| Live guidance (floor arrows, giant arrow, haptics, earcon) | yes, on the phone, fully offline | |
+| Gemini Live voice | yes, through **one tiny token endpoint** (the API key never goes into the app) | Apple TTS if it fails |
+| Server processing, keyframe pipeline, storage | | route stays on the phone, sharing = AirDrop/file or not at all |
+| Business web page (checkbox, entrance markers, score) | frontend only | hardcoded data, no API |
+| 3D map for users | frontend only | fixture entrances |
+
+Consequences:
+- **VIDEO** shrinks to: token endpoint + (stretch) Gemini labeling. It helps IOS-REC build waypoints on the phone first.
+- **CORE/MAP** build the web pages against static JSON, no database, no uploads.
+- Section 2 (server processing) is only built once the on-device flow runs end to end.
+
 ## Decisions
 | Topic | Decision |
 |---|---|
