@@ -162,3 +162,6 @@ Xcode: one project in `ios/`, Swift 6, iOS 18+, **folder-synchronized groups**, 
 1. Does the demo iPhone have **LiDAR** (Pro model)? Default: build without it, and use mesh only if available.
 2. **Which route** do we film: entrance → toilet in the AI Center. Default: yes, two takes before 23:00.
 3. **Language of the voice** on stage: default German.
+
+## 10. App entry (both sides in one app)
+The iOS app starts with one choice: **"I run a business"** → Record + Review, or **"I'm visiting"** → profile, place, Go. The choice is remembered and can be switched in settings. Owner: IOS-REC builds the start screen in `ios/Doorway/Shared/`.

@@ -14,6 +14,22 @@ Wheelchair users and blind people don't know in advance which entrance works for
 
 **The video is the core.** Everything else can be leaner.
 
+## Two sides, both shown in the demo
+**Business side** (web on the laptop + Record mode in the iOS app)
+1. Google Business Profile style page: tick "Accessibility".
+2. Map: drag the entrance markers to the right spots and pick the type for each.
+3. Task "Film the route to the toilet" → switch to the iPhone, Record mode, walk, tap the marks.
+4. Review on the phone: confirm waypoints. The web page then shows the AI-filled entrance details to confirm and the visibility score going up.
+
+**User side** (iOS app, Go mode, map on the web or in the app)
+1. Choose a profile: wheelchair / blind.
+2. Search for the place: the 3D map shows the entrances in color and shape, filtered by profile.
+3. "Take me to the toilet": the camera finds the room, floor arrows or the giant arrow, Gemini voice, haptics.
+4. Arrived.
+
+**Stage flow, 3 minutes**: problem (20 s) → business side (60 s) → user side (80 s) → why Google should build it (20 s).
+The iOS app opens with one choice: **"I run a business"** or **"I'm visiting"**, so both sides live in the same app on the demo phone.
+
 ## Name and repo
 **Google Doorway**. Folder `Desktop/APP/doorway`, private repo `sami-mag07/doorway`, Malek as collaborator.
 
