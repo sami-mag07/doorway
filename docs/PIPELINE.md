@@ -117,7 +117,7 @@ ARKit session          ──►  path → turns, stops         ──►  load 
 - **Replay**: Reality Composer can record AR sessions, and Xcode can replay them through the scheme option "ARKit Replay Data" (verify on Xcode 26). Record take 2 of the walk once and run Go against it in Xcode, no walking needed.
 - **Run log** `data/routes/<id>/runs/<ts>.jsonl`: time, position, waypoint, trigger, relocalized yes/no, Gemini latency. Latency numbers for the pitch come from this.
 - **Stage demo, two options**:
-  1. Safe: the real walk in the AI Center as a screen recording, narrated live.
+  1. Safe: the real walk in CODE University as a screen recording, narrated live.
   2. Wow: film a 10 m route on stage (stage → exit door), processed in under 60 s, then someone walks it with the giant arrow. Only if option 1 is ready as a backup.
 
 ## 6. Roles (update to README)
@@ -137,7 +137,7 @@ Xcode: one project in `ios/`, Swift 6, iOS 18+, **folder-synchronized groups**, 
 | 17:00 | AR session + recording writes all 4 files on the iPhone | giant arrow + step cards from the fixture | token route + WebSocket connects, text in, audio out | geometry from a fixture `path.json` |
 | 19:00 | upload + status polling | world map load + relocalize, floor path | camera frames + mic, `warn` tool | Gemini pass 1 + merge → first real `route.json` |
 | 21:00 | review screen | triggers, haptics, earcons, off route | early-trigger speech from IOS-GO events | keyframes + pass 2 + entrance details |
-| 23:00 | first real walk in the AI Center, two takes | fallbacks 4.3 | Apple TTS fallback, reconnect | demo route cached |
+| 23:00 | first real walk in CODE University, two takes | fallbacks 4.3 | Apple TTS fallback, reconnect | demo route cached |
 | 07:00 | | | | full rehearsal with run log |
 
 ## 8. Contracts
@@ -160,7 +160,7 @@ Xcode: one project in `ios/`, Swift 6, iOS 18+, **folder-synchronized groups**, 
 
 ## 9. Still open (defaults apply if nobody objects)
 1. Does the demo iPhone have **LiDAR** (Pro model)? Default: build without it, and use mesh only if available.
-2. **Which route** do we film: entrance → toilet in the AI Center. Default: yes, two takes before 23:00.
+2. **Route**: entrance → toilet at CODE University, two takes tonight 20:00 to 21:00. The museum is off.
 3. **Language of the voice** on stage: default German.
 
 ## 10. App entry (both sides in one app)

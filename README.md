@@ -72,7 +72,7 @@ The iOS app opens with one choice: **"I run a business"** or **"I'm visiting"**,
 - Route fields: `id`, `placeId`, `from` (entrance id), `to` (`toilet|elevator|reception|…`), `video`, `duration_s`
 - `waypoints[]`: `id`, `t` (second in the video), `image`, `heading_deg`, `turn` (`start|straight|left|right|u_turn|up|down|arrive`), `landmark`, `instruction` `{de,en}`, `hazards[]`, `steps_est`, `wheelchair_ok`, `blind_hint` `{de,en}`
 
-CORE creates fixture files for the demo location (Google AI Center Berlin) in the first hour. Everyone builds against them.
+CORE creates fixture files for the demo location (CODE University Berlin) in the first hour. Everyone builds against them.
 
 ## Roles (orchestrated Claude terminals, like FollowCam)
 | Role | Owns | Delivers |
@@ -100,7 +100,7 @@ Rules:
 ## Timeline
 | Time | Goal |
 |---|---|
-| **14:00–15:00** | Master plan as `docs/ORCHESTRATION.md` + `docs/tasks/<ROLE>.md`, repo, scaffold deployed, fixtures. Film the entrance → toilet route in the AI Center (on a phone, 2 takes). |
+| **14:00–15:00** | Master plan as `docs/ORCHESTRATION.md` + `docs/tasks/<ROLE>.md`, repo, scaffold deployed, fixtures. Film the entrance → toilet route in CODE University (on a phone, 2 takes). |
 | **15:00–18:00** | Every track runs alone against the fixtures. Add keys as soon as they arrive. |
 | **18:00** | Checkpoint: first real `route.json` from our video, map shows entrances, giant arrow runs on the iPhone. |
 | **18:00–22:00** | Gemini Live connected, onboarding fills itself from the video, ARKit shows arrows. |
@@ -124,7 +124,7 @@ Rules:
 
 ## Testing
 1. With fixtures: every view renders without keys.
-2. A real video from the AI Center produces a `route.json` with waypoints at the real turns.
+2. A real video from CODE University produces a `route.json` with waypoints at the real turns.
 3. iPhone Safari: camera, sensors and upload work, the arrow turns, the voice speaks.
 4. The live agent advances correctly while actually walking (test run with a log).
 5. Airplane mode: the demo runs from the cache. The full flow takes under 3 minutes.
