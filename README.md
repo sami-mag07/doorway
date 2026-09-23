@@ -1,4 +1,6 @@
 # Google Doorway: Master Plan
+
+> **Update Sep 23, 16:00:** recording and live guidance are now a native Swift app with ARKit (real 3D path + world map), Gemini Live for voice and hazards. Details, roles and milestones: `docs/PIPELINE.md`. Where this README and PIPELINE.md disagree, PIPELINE.md wins.
 Google x Aktion Mensch Hackathon "AI Agents for Inclusion", Berlin. Start Sep 23, 14:00. **Code freeze Sep 24, 10:00. Pitch 12:00.** 20 hours.
 
 ## The problem
@@ -64,7 +66,8 @@ CORE creates fixture files for the demo location (Google AI Center Berlin) in th
 | **MAP** | `/`, `/business`, map components | 3D user map, onboarding with markers, score |
 | **VIDEO** | `/record`, `app/api/routes`, `lib/video/` | recording with sensor trace, waypoints, Gemini labeling, keyframes, `route.json` |
 | **LIVE** | `/go`, `lib/live/`, token route | Gemini Live agent, camera floor arrow, giant arrow with contrast modes |
-| **IOS** | `ios/` | ARKit app with floor arrows from `route.json` |
+| **IOS-REC** | `ios/Doorway/Record/`, `Shared/` | AR recording, marks, world map, upload, review |
+| **IOS-GO** | `ios/Doorway/Go/` | relocalization, floor path, giant arrow, haptics, fallbacks |
 | **PITCH** | `pitch/` | German deck, 3-minute demo script, numbers |
 | **QA/DESIGN** (designer + skeptic agents) | reports only | accessibility of the app itself, design check, demo risks |
 
