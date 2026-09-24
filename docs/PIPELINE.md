@@ -21,6 +21,18 @@ Consequences:
 - **CORE/MAP** build the web pages against static JSON, no database, no uploads.
 - Section 2 (server processing) is only built once the on-device flow runs end to end.
 
+## 0b. Landmarks, not a replayed path (core idea)
+People don't walk the same line twice, so guidance must not replay the recorded path. It navigates **from landmark to landmark**.
+
+- **Landmark graph**: every mark and turn becomes a node with a 3D position in the world map, a keyframe and a name. The recorded walk only provides the edges (which landmarks connect). More recordings of the same place (owner + community) add nodes and edges, so the graph grows.
+- **Recognition on three levels**:
+  1. **ARKit world map** (geometry, instant): recognizes the room from distinctive visual feature points, however the user walks in. This is the "AR level", and it runs at 60 Hz.
+  2. **Apple Vision feature prints** (appearance, about 20 ms): the current frame against each landmark keyframe, which catches landmarks when relocalization is weak.
+  3. **Gemini** (meaning, about 1 s): names landmarks when recording ("green door with WC sign") and confirms them live ("I can see the WC sign").
+- **Guidance**: the arrow points to the **next landmark node**, not along the old line. If the user skips a landmark or comes from another side, the app picks the nearest node that still leads to the target (shortest path in the graph).
+- **Walls**: we have no floor plan, so the arrow never points straight to the target through walls, only along graph edges we know are walkable. With LiDAR the scene mesh can later refine this.
+- **Demo**: record two different walks to the toilet (e.g. via the stairs side and via the corridor). The user walks a third way, and the app still finds the landmarks.
+
 ## Decisions
 | Topic | Decision |
 |---|---|
